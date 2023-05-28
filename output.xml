@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230528 20:49:23.241" rpa="false" schemaversion="3">
+<suite id="s1" name="Testcases" source="C:\Users\sprak\Robot\Assessment\Testcases\testcases.robot">
+<test id="s1-t1" name="Open browser" line="10">
+<kw name="login" library="Keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230528 20:49:23.505" level="INFO">Opening browser 'chrome' to base url 'https://qa-refapp.openmrs.org/openmrs/login.htm'.</msg>
+<status status="PASS" starttime="20230528 20:49:23.499" endtime="20230528 20:49:29.802"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230528 20:49:29.802" endtime="20230528 20:49:29.943"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5 second</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230528 20:49:29.943" endtime="20230528 20:49:29.943"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_id}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:49:29.943" level="INFO">Typing text 'Admin' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20230528 20:49:29.943" endtime="20230528 20:49:31.601"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_id}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:49:31.603" level="INFO">Typing text 'Admin123' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20230528 20:49:31.601" endtime="20230528 20:49:33.207"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${op_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:49:33.207" level="INFO">Clicking element 'id:Outpatient Clinic'.</msg>
+<status status="PASS" starttime="20230528 20:49:33.207" endtime="20230528 20:49:34.288"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:49:34.288" level="INFO">Clicking element 'id:loginButton'.</msg>
+<status status="PASS" starttime="20230528 20:49:34.288" endtime="20230528 20:49:38.670"/>
+</kw>
+<status status="PASS" starttime="20230528 20:49:23.499" endtime="20230528 20:49:38.670"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${resisterpatient_id}</arg>
+<arg>error=page not loaded</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230528 20:49:38.672" endtime="20230528 20:49:39.193"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${resisterpatient_id}</arg>
+<arg>message=Page doest not contain Resiter patient option</arg>
+<arg>loglevel=TRACE</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230528 20:49:39.706" level="INFO">Current page contains element 'id:referenceapplication-registrationapp-registerPatient-homepageLink-referenceapplication-registrationapp-registerPatient-homepageLink-extension'.</msg>
+<status status="PASS" starttime="20230528 20:49:39.193" endtime="20230528 20:49:39.706"/>
+</kw>
+<doc>Here we are checking login functionality and check whether the page is
+loaded or not</doc>
+<status status="PASS" starttime="20230528 20:49:23.499" endtime="20230528 20:49:39.706"/>
+</test>
+<test id="s1-t2" name="Register a new patient" line="17">
+<kw name="Register new patient" library="Keywords">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5 second</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230528 20:49:39.737" endtime="20230528 20:49:39.737"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${resisterpatient_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:49:39.737" level="INFO">Clicking element 'id:referenceapplication-registrationapp-registerPatient-homepageLink-referenceapplication-registrationapp-registerPatient-homepageLink-extension'.</msg>
+<status status="PASS" starttime="20230528 20:49:39.737" endtime="20230528 20:49:47.055"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${givenname_id}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230528 20:49:47.055" endtime="20230528 20:49:48.168"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${givenname_id}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:49:48.168" level="INFO">Typing text 'Prakash' into text field 'xpath://*[@name='givenName']'.</msg>
+<status status="PASS" starttime="20230528 20:49:48.168" endtime="20230528 20:49:49.772"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${familyname_id}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:49:49.772" level="INFO">Typing text 'Sundar' into text field 'xpath://*[@name='familyName']'.</msg>
+<status status="PASS" starttime="20230528 20:49:49.772" endtime="20230528 20:49:51.432"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${relativenext_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:49:51.432" level="INFO">Clicking element 'id:next-button'.</msg>
+<status status="PASS" starttime="20230528 20:49:51.432" endtime="20230528 20:49:52.550"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${gender_id}</arg>
+<arg>${gender}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20230528 20:49:52.550" level="INFO">Selecting options from selection list 'id:gender-field' by value M.</msg>
+<status status="PASS" starttime="20230528 20:49:52.550" endtime="20230528 20:49:56.828"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${relativenext_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:49:56.828" level="INFO">Clicking element 'id:next-button'.</msg>
+<status status="PASS" starttime="20230528 20:49:56.828" endtime="20230528 20:49:57.888"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${day_id}</arg>
+<arg>31</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:49:57.888" level="INFO">Typing text '31' into text field 'id:birthdateDay-field'.</msg>
+<status status="PASS" starttime="20230528 20:49:57.888" endtime="20230528 20:49:59.588"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${month_id}</arg>
+<arg>5</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20230528 20:49:59.588" level="INFO">Selecting options from selection list 'id:birthdateMonth-field' by value 5.</msg>
+<status status="PASS" starttime="20230528 20:49:59.588" endtime="20230528 20:50:03.749"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${year_id}</arg>
+<arg>1997</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:03.749" level="INFO">Typing text '1997' into text field 'id:birthdateYear-field'.</msg>
+<status status="PASS" starttime="20230528 20:50:03.749" endtime="20230528 20:50:05.335"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${relativenext_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:05.335" level="INFO">Clicking element 'id:next-button'.</msg>
+<status status="PASS" starttime="20230528 20:50:05.335" endtime="20230528 20:50:06.405"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${addreelin1_id}</arg>
+<arg>2711 S Ocean Dr</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:06.405" level="INFO">Typing text '2711 S Ocean Dr' into text field 'id:address1'.</msg>
+<status status="PASS" starttime="20230528 20:50:06.405" endtime="20230528 20:50:08.073"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${city_id}</arg>
+<arg>Hollywood</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:08.073" level="INFO">Typing text 'Hollywood' into text field 'id:cityVillage'.</msg>
+<status status="PASS" starttime="20230528 20:50:08.073" endtime="20230528 20:50:09.741"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${state_id}</arg>
+<arg>FL</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:09.741" level="INFO">Typing text 'FL' into text field 'id:stateProvince'.</msg>
+<status status="PASS" starttime="20230528 20:50:09.741" endtime="20230528 20:50:11.402"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${country_id}</arg>
+<arg>United States</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:11.402" level="INFO">Typing text 'United States' into text field 'id:country'.</msg>
+<status status="PASS" starttime="20230528 20:50:11.402" endtime="20230528 20:50:13.092"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${zipcode_id}</arg>
+<arg>33019</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:13.092" level="INFO">Typing text '33019' into text field 'id:postalCode'.</msg>
+<status status="PASS" starttime="20230528 20:50:13.092" endtime="20230528 20:50:14.736"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${relativenext_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:14.736" level="INFO">Clicking element 'id:next-button'.</msg>
+<status status="PASS" starttime="20230528 20:50:14.736" endtime="20230528 20:50:15.828"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${phonenumber_id}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:15.830" level="INFO">Typing text '9876543210' into text field 'xpath://*[@name='phoneNumber']'.</msg>
+<status status="PASS" starttime="20230528 20:50:15.828" endtime="20230528 20:50:17.523"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${relativenext_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:17.525" level="INFO">Clicking element 'id:next-button'.</msg>
+<status status="PASS" starttime="20230528 20:50:17.524" endtime="20230528 20:50:18.615"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${relativenext_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:18.615" level="INFO">Clicking element 'id:next-button'.</msg>
+<status status="PASS" starttime="20230528 20:50:18.615" endtime="20230528 20:50:19.707"/>
+</kw>
+<status status="PASS" starttime="20230528 20:49:39.737" endtime="20230528 20:50:19.707"/>
+</kw>
+<status status="PASS" starttime="20230528 20:49:39.737" endtime="20230528 20:50:19.707"/>
+</test>
+<test id="s1-t3" name="Verify patient datials" line="19">
+<kw name="Verify patient details" library="Keywords">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5 second</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230528 20:50:19.717" endtime="20230528 20:50:19.717"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${temp}</var>
+<arg>${name_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:20.774" level="INFO">${temp} = Name: Prakash, Sundar</msg>
+<status status="PASS" starttime="20230528 20:50:19.717" endtime="20230528 20:50:20.774"/>
+</kw>
+<kw name="Fetch From Right" library="String">
+<var>${x}</var>
+<arg>${temp}</arg>
+<arg>Name:</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<msg timestamp="20230528 20:50:20.775" level="INFO">${x} =  Prakash, Sundar</msg>
+<status status="PASS" starttime="20230528 20:50:20.774" endtime="20230528 20:50:20.775"/>
+</kw>
+<kw name="Strip String" library="String">
+<var>${xstripped}</var>
+<arg>${x}</arg>
+<arg>mode=left</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<msg timestamp="20230528 20:50:20.776" level="INFO">${xstripped} = Prakash, Sundar</msg>
+<status status="PASS" starttime="20230528 20:50:20.775" endtime="20230528 20:50:20.776"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${xstripped}</arg>
+<arg>Prakash, Sundar</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230528 20:50:20.776" endtime="20230528 20:50:20.776"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${temp1}</var>
+<arg>${gender_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:21.819" level="INFO">${temp1} = Gender: Male</msg>
+<status status="PASS" starttime="20230528 20:50:20.776" endtime="20230528 20:50:21.819"/>
+</kw>
+<kw name="Fetch From Right" library="String">
+<var>${x1}</var>
+<arg>${temp1}</arg>
+<arg>Gender:</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<msg timestamp="20230528 20:50:21.819" level="INFO">${x1} =  Male</msg>
+<status status="PASS" starttime="20230528 20:50:21.819" endtime="20230528 20:50:21.819"/>
+</kw>
+<kw name="Strip String" library="String">
+<var>${x1stripped}</var>
+<arg>${x1}</arg>
+<arg>mode=left</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<msg timestamp="20230528 20:50:21.819" level="INFO">${x1stripped} = Male</msg>
+<status status="PASS" starttime="20230528 20:50:21.819" endtime="20230528 20:50:21.819"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${x1stripped}</arg>
+<arg>Male</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230528 20:50:21.819" endtime="20230528 20:50:21.819"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${temp2}</var>
+<arg>${dob_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:22.860" level="INFO">${temp2} = Birthdate: 31, May, 1997</msg>
+<status status="PASS" starttime="20230528 20:50:21.819" endtime="20230528 20:50:22.860"/>
+</kw>
+<kw name="Fetch From Right" library="String">
+<var>${x2}</var>
+<arg>${temp2}</arg>
+<arg>Birthdate:</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<msg timestamp="20230528 20:50:22.860" level="INFO">${x2} =  31, May, 1997</msg>
+<status status="PASS" starttime="20230528 20:50:22.860" endtime="20230528 20:50:22.860"/>
+</kw>
+<kw name="Strip String" library="String">
+<var>${x2stripped}</var>
+<arg>${x2}</arg>
+<arg>mode=left</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<msg timestamp="20230528 20:50:22.860" level="INFO">${x2stripped} = 31, May, 1997</msg>
+<status status="PASS" starttime="20230528 20:50:22.860" endtime="20230528 20:50:22.860"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${x2stripped}</arg>
+<arg>31, May, 1997</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230528 20:50:22.860" endtime="20230528 20:50:22.860"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${temp3}</var>
+<arg>${address_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:23.907" level="INFO">${temp3} = Address: 2711 S Ocean Dr, Hollywood, FL, United States, 33019</msg>
+<status status="PASS" starttime="20230528 20:50:22.860" endtime="20230528 20:50:23.907"/>
+</kw>
+<kw name="Fetch From Right" library="String">
+<var>${x3}</var>
+<arg>${temp3}</arg>
+<arg>Address:</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<msg timestamp="20230528 20:50:23.907" level="INFO">${x3} =  2711 S Ocean Dr, Hollywood, FL, United States, 33019</msg>
+<status status="PASS" starttime="20230528 20:50:23.907" endtime="20230528 20:50:23.907"/>
+</kw>
+<kw name="Strip String" library="String">
+<var>${x3stripped}</var>
+<arg>${x3}</arg>
+<arg>mode=left</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<msg timestamp="20230528 20:50:23.907" level="INFO">${x3stripped} = 2711 S Ocean Dr, Hollywood, FL, United States, 33019</msg>
+<status status="PASS" starttime="20230528 20:50:23.907" endtime="20230528 20:50:23.907"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${x3stripped}</arg>
+<arg>2711 S Ocean Dr, Hollywood, FL, United States, 33019</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230528 20:50:23.907" endtime="20230528 20:50:23.907"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${temp4}</var>
+<arg>${phnumber_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:24.950" level="INFO">${temp4} = Phone Number: 9876543210</msg>
+<status status="PASS" starttime="20230528 20:50:23.907" endtime="20230528 20:50:24.950"/>
+</kw>
+<kw name="Fetch From Right" library="String">
+<var>${x4}</var>
+<arg>${temp4}</arg>
+<arg>Phone Number:</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<msg timestamp="20230528 20:50:24.950" level="INFO">${x4} =  9876543210</msg>
+<status status="PASS" starttime="20230528 20:50:24.950" endtime="20230528 20:50:24.950"/>
+</kw>
+<kw name="Strip String" library="String">
+<var>${x4stripped}</var>
+<arg>${x4}</arg>
+<arg>mode=left</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<msg timestamp="20230528 20:50:24.950" level="INFO">${x4stripped} = 9876543210</msg>
+<status status="PASS" starttime="20230528 20:50:24.950" endtime="20230528 20:50:24.950"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${x4stripped}</arg>
+<arg>9876543210</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230528 20:50:24.950" endtime="20230528 20:50:24.950"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${temp5}</var>
+<arg>${relatives_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:25.986" level="INFO">${temp5} = Relatives: ---</msg>
+<status status="PASS" starttime="20230528 20:50:24.950" endtime="20230528 20:50:25.986"/>
+</kw>
+<kw name="Fetch From Right" library="String">
+<var>${x5}</var>
+<arg>${temp5}</arg>
+<arg>Relatives:</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<msg timestamp="20230528 20:50:25.987" level="INFO">${x5} =  ---</msg>
+<status status="PASS" starttime="20230528 20:50:25.986" endtime="20230528 20:50:25.987"/>
+</kw>
+<kw name="Strip String" library="String">
+<var>${x5stripped}</var>
+<arg>${x5}</arg>
+<arg>mode=left</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<msg timestamp="20230528 20:50:25.987" level="INFO">${x5stripped} = ---</msg>
+<status status="PASS" starttime="20230528 20:50:25.987" endtime="20230528 20:50:25.987"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${x5stripped}</arg>
+<arg>---</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230528 20:50:25.987" endtime="20230528 20:50:25.987"/>
+</kw>
+<status status="PASS" starttime="20230528 20:50:19.715" endtime="20230528 20:50:25.987"/>
+</kw>
+<status status="PASS" starttime="20230528 20:50:19.713" endtime="20230528 20:50:25.987"/>
+</test>
+<test id="s1-t4" name="Verify patient age" line="21">
+<kw name="Verify age" library="Keywords">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5 second</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230528 20:50:25.987" endtime="20230528 20:50:25.987"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${submit_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:25.995" level="INFO">Clicking element 'id:submit'.</msg>
+<status status="PASS" starttime="20230528 20:50:25.987" endtime="20230528 20:50:27.147"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${tempAge}</var>
+<arg>${age_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:40.706" level="INFO">${tempAge} = 25 year(s) ( 31.May.1997)</msg>
+<status status="PASS" starttime="20230528 20:50:27.147" endtime="20230528 20:50:40.706"/>
+</kw>
+<kw name="Fetch From Left" library="String">
+<var>${age}</var>
+<arg>${tempAge}</arg>
+<arg>year(s) ( 31.May.1997)</arg>
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<msg timestamp="20230528 20:50:40.706" level="INFO">${age} = 25 </msg>
+<status status="PASS" starttime="20230528 20:50:40.706" endtime="20230528 20:50:40.706"/>
+</kw>
+<kw name="Strip String" library="String">
+<var>${actualAge}</var>
+<arg>${age}</arg>
+<arg>mode=right</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<msg timestamp="20230528 20:50:40.706" level="INFO">${actualAge} = 25</msg>
+<status status="PASS" starttime="20230528 20:50:40.706" endtime="20230528 20:50:40.706"/>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<var>${convertdate}</var>
+<arg>19970531</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<msg timestamp="20230528 20:50:40.710" level="INFO">${convertdate} = 1997-05-31</msg>
+<status status="PASS" starttime="20230528 20:50:40.706" endtime="20230528 20:50:40.710"/>
+</kw>
+<kw name="Calculate Age" library="Utility">
+<var>${expectedAge}</var>
+<arg>${31}</arg>
+<arg>${5}</arg>
+<arg>${1997}</arg>
+<msg timestamp="20230528 20:50:40.715" level="INFO">${expectedAge} = 25</msg>
+<status status="PASS" starttime="20230528 20:50:40.710" endtime="20230528 20:50:40.715"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${actualAge}</arg>
+<arg>${expectedAge}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230528 20:50:40.715" endtime="20230528 20:50:40.715"/>
+</kw>
+<status status="PASS" starttime="20230528 20:50:25.987" endtime="20230528 20:50:40.715"/>
+</kw>
+<status status="PASS" starttime="20230528 20:50:25.987" endtime="20230528 20:50:40.715"/>
+</test>
+<test id="s1-t5" name="Confirm visit" line="23">
+<kw name="Confirm visit" library="Keywords">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5 second</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230528 20:50:40.715" endtime="20230528 20:50:40.715"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${startvisit_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:40.724" level="INFO">Clicking element 'xpath://*[@id='org.openmrs.module.coreapps.createVisit']/div/div[2]'.</msg>
+<status status="PASS" starttime="20230528 20:50:40.715" endtime="20230528 20:50:41.835"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${confirmvisit_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:41.835" level="INFO">Clicking element 'id:start-visit-with-visittype-confirm'.</msg>
+<status status="PASS" starttime="20230528 20:50:41.835" endtime="20230528 20:50:42.909"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${attachmentbutton_id}</arg>
+<arg>timeout=60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230528 20:50:42.909" endtime="20230528 20:50:47.462"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${gotopatientdetails_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:47.462" level="INFO">Clicking element 'xpath://ul[@id='breadcrumbs']//li[2]'.</msg>
+<status status="PASS" starttime="20230528 20:50:47.462" endtime="20230528 20:50:50.244"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${endvisit_xpath}</arg>
+<arg>timeout=60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230528 20:50:50.244" endtime="20230528 20:50:51.295"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${visit}</var>
+<arg>${vists_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:52.353" level="INFO">${visit} = 28.May.2023</msg>
+<status status="PASS" starttime="20230528 20:50:51.295" endtime="20230528 20:50:52.353"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${visit}</arg>
+<arg>msg=No vist recorded</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20230528 20:50:52.353" level="INFO">Length is 11</msg>
+<status status="PASS" starttime="20230528 20:50:52.353" endtime="20230528 20:50:52.353"/>
+</kw>
+<kw name="Verify Date" library="Utility">
+<var>${verifydate}</var>
+<arg>${visit}</arg>
+<msg timestamp="20230528 20:50:52.353" level="INFO">${verifydate} = True</msg>
+<status status="PASS" starttime="20230528 20:50:52.353" endtime="20230528 20:50:52.353"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${verifydate}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230528 20:50:52.353" endtime="20230528 20:50:52.353"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${endvisit_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:52.355" level="INFO">Clicking element 'xpath://ul[@class='float-left d-none d-lg-block']//li[1]'.</msg>
+<status status="PASS" starttime="20230528 20:50:52.355" endtime="20230528 20:50:53.460"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${yesbutton_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:53.462" level="INFO">Clicking element 'xpath://*[@id='end-visit-dialog']//div[2]//button[1]'.</msg>
+<status status="PASS" starttime="20230528 20:50:53.460" endtime="20230528 20:50:54.552"/>
+</kw>
+<status status="PASS" starttime="20230528 20:50:40.715" endtime="20230528 20:50:54.552"/>
+</kw>
+<status status="PASS" starttime="20230528 20:50:40.715" endtime="20230528 20:50:54.552"/>
+</test>
+<test id="s1-t6" name="Calculae and Verify BMI" line="25">
+<kw name="Check BMI" library="Keywords">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230528 20:50:54.555" endtime="20230528 20:50:54.555"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${startvisit_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:54.555" level="INFO">Clicking element 'xpath://*[@id='org.openmrs.module.coreapps.createVisit']/div/div[2]'.</msg>
+<status status="PASS" starttime="20230528 20:50:54.555" endtime="20230528 20:50:57.129"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${confirmvisit_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:50:57.129" level="INFO">Clicking element 'id:start-visit-with-visittype-confirm'.</msg>
+<status status="PASS" starttime="20230528 20:50:57.129" endtime="20230528 20:50:58.213"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${cpaturevitals_xpath}</arg>
+<arg>timeout=60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230528 20:50:58.213" endtime="20230528 20:51:01.539"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cpaturevitals_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:01.539" level="INFO">Clicking element 'xpath://*[@id='referenceapplication.realTime.vitals']'.</msg>
+<status status="PASS" starttime="20230528 20:51:01.539" endtime="20230528 20:51:05.687"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${height_xpath}</arg>
+<arg>timeout=60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230528 20:51:05.687" endtime="20230528 20:51:06.732"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${height_xpath}</arg>
+<arg>175</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:06.732" level="INFO">Typing text '175' into text field 'xpath://*[@id='w8']'.</msg>
+<status status="PASS" starttime="20230528 20:51:06.732" endtime="20230528 20:51:08.380"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${relativenext_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:08.380" level="INFO">Clicking element 'id:next-button'.</msg>
+<status status="PASS" starttime="20230528 20:51:08.380" endtime="20230528 20:51:09.460"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${weight_xpath}</arg>
+<arg>timeout=60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230528 20:51:09.460" endtime="20230528 20:51:10.499"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${weight_xpath}</arg>
+<arg>80</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:10.501" level="INFO">Typing text '80' into text field 'xpath://*[@id='w10']'.</msg>
+<status status="PASS" starttime="20230528 20:51:10.499" endtime="20230528 20:51:12.176"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${relativenext_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:12.176" level="INFO">Clicking element 'id:next-button'.</msg>
+<status status="PASS" starttime="20230528 20:51:12.176" endtime="20230528 20:51:13.270"/>
+</kw>
+<kw name="Bmi" library="Utility">
+<var>${bmi}</var>
+<arg>${175}</arg>
+<arg>${80}</arg>
+<msg timestamp="20230528 20:51:13.273" level="INFO">${bmi} = 26.1</msg>
+<status status="PASS" starttime="20230528 20:51:13.270" endtime="20230528 20:51:13.273"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${calculatedbmi}</var>
+<arg>${calculatedbmi_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:14.327" level="INFO">${calculatedbmi} = 26.1</msg>
+<status status="PASS" starttime="20230528 20:51:13.273" endtime="20230528 20:51:14.327"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${bmi}</arg>
+<arg>${calculatedbmi}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230528 20:51:14.327" endtime="20230528 20:51:14.327"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${savebmi_confirm_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:14.327" level="INFO">Clicking element 'xpath://*[@id='formBreadcrumb']/li[2]/span'.</msg>
+<status status="PASS" starttime="20230528 20:51:14.327" endtime="20230528 20:51:15.599"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${savebutton_xpath}</arg>
+<arg>timeout=60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230528 20:51:15.600" endtime="20230528 20:51:16.692"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${savebutton_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:16.692" level="INFO">Clicking element 'xpath://*[@id='confirmationQuestion']/p[1]/button'.</msg>
+<status status="PASS" starttime="20230528 20:51:16.692" endtime="20230528 20:51:17.798"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${gotopatientdetails_xpath}</arg>
+<arg>timeout=60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230528 20:51:20.326" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<status status="PASS" starttime="20230528 20:51:17.798" endtime="20230528 20:51:21.585"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${gotopatientdetails_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:21.586" level="INFO">Clicking element 'xpath://ul[@id='breadcrumbs']//li[2]'.</msg>
+<status status="PASS" starttime="20230528 20:51:21.586" endtime="20230528 20:51:24.451"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${endvisit_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:24.451" level="INFO">Clicking element 'xpath://ul[@class='float-left d-none d-lg-block']//li[1]'.</msg>
+<status status="PASS" starttime="20230528 20:51:24.451" endtime="20230528 20:51:25.602"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${yesbutton_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:25.602" level="INFO">Clicking element 'xpath://*[@id='end-visit-dialog']//div[2]//button[1]'.</msg>
+<status status="PASS" starttime="20230528 20:51:25.602" endtime="20230528 20:51:26.705"/>
+</kw>
+<status status="PASS" starttime="20230528 20:50:54.555" endtime="20230528 20:51:26.705"/>
+</kw>
+<status status="PASS" starttime="20230528 20:50:54.555" endtime="20230528 20:51:26.706"/>
+</test>
+<test id="s1-t7" name="Check BMI details on Patient detail page" line="27">
+<kw name="Check BMI details" library="Keywords">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230528 20:51:26.738" endtime="20230528 20:51:26.738"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${bmi_height_xpath}</arg>
+<arg>timeout=60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230528 20:51:26.738" endtime="20230528 20:51:29.927"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${getheight}</var>
+<arg>${bmi_height_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:30.978" level="INFO">${getheight} = 175</msg>
+<status status="PASS" starttime="20230528 20:51:29.927" endtime="20230528 20:51:30.978"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${getheight}</arg>
+<arg>175</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230528 20:51:30.978" endtime="20230528 20:51:30.978"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${getweight}</var>
+<arg>${bmi_weight_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:32.019" level="INFO">${getweight} = 80</msg>
+<status status="PASS" starttime="20230528 20:51:30.978" endtime="20230528 20:51:32.019"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${getweight}</arg>
+<arg>80</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230528 20:51:32.019" endtime="20230528 20:51:32.019"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${getbmi}</var>
+<arg>${bmi_calculatedbmi_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:33.056" level="INFO">${getbmi} = 26.1</msg>
+<status status="PASS" starttime="20230528 20:51:32.019" endtime="20230528 20:51:33.056"/>
+</kw>
+<kw name="Bmi" library="Utility">
+<var>${bmi}</var>
+<arg>${175}</arg>
+<arg>${80}</arg>
+<msg timestamp="20230528 20:51:33.058" level="INFO">${bmi} = 26.1</msg>
+<status status="PASS" starttime="20230528 20:51:33.056" endtime="20230528 20:51:33.058"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${getbmi}</arg>
+<arg>${bmi}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230528 20:51:33.058" endtime="20230528 20:51:33.058"/>
+</kw>
+<status status="PASS" starttime="20230528 20:51:26.728" endtime="20230528 20:51:33.058"/>
+</kw>
+<status status="PASS" starttime="20230528 20:51:26.723" endtime="20230528 20:51:33.058"/>
+</test>
+<test id="s1-t8" name="Recent Visit has one more new entry" line="29">
+<kw name="Recent Visit has one more new entry" library="Keywords">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230528 20:51:33.068" endtime="20230528 20:51:33.068"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${visit}</var>
+<arg>${vists_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:34.127" level="INFO">${visit} = 28.May.2023
+Vitals</msg>
+<status status="PASS" starttime="20230528 20:51:33.068" endtime="20230528 20:51:34.127"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${visit}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230528 20:51:34.127" endtime="20230528 20:51:34.127"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${visit}</arg>
+<arg>28.May.2023</arg>
+<arg>Vitals</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20230528 20:51:34.127" level="FAIL">Vitals: 28.May.2023
+Vitals != 28.May.2023</msg>
+<status status="FAIL" starttime="20230528 20:51:34.127" endtime="20230528 20:51:34.131"/>
+</kw>
+<kw name="Verify Date" library="Utility">
+<var>${verifydate}</var>
+<arg>${visit}</arg>
+<status status="NOT RUN" starttime="20230528 20:51:34.131" endtime="20230528 20:51:34.132"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${verifydate}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20230528 20:51:34.132" endtime="20230528 20:51:34.132"/>
+</kw>
+<status status="FAIL" starttime="20230528 20:51:33.068" endtime="20230528 20:51:34.132"/>
+</kw>
+<status status="FAIL" starttime="20230528 20:51:33.067" endtime="20230528 20:51:34.155">Vitals: 28.May.2023
+Vitals != 28.May.2023</status>
+</test>
+<test id="s1-t9" name="Merge Visits" line="31">
+<kw name="Merge Visits" library="Keywords">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230528 20:51:34.174" endtime="20230528 20:51:34.174"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${mergevisit_xpath}</arg>
+<arg>timeout=60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230528 20:51:34.174" endtime="20230528 20:51:35.220"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${mergevisit_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:35.223" level="INFO">Clicking element 'xpath://*[@id='org.openmrs.module.coreapps.mergeVisits']/div/div[2]'.</msg>
+<status status="PASS" starttime="20230528 20:51:35.220" endtime="20230528 20:51:37.730"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://*[@id='active-visits']//tbody//tr[1]//td[1]//*[@type='checkbox']</arg>
+<arg>timeout=60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230528 20:51:37.730" endtime="20230528 20:51:38.776"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id='active-visits']//tbody//tr[1]//td[1]//*[@type='checkbox']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:38.776" level="INFO">Clicking element 'xpath://*[@id='active-visits']//tbody//tr[1]//td[1]//*[@type='checkbox']'.</msg>
+<status status="PASS" starttime="20230528 20:51:38.776" endtime="20230528 20:51:39.893"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id='active-visits']//tbody//tr[2]//td[1]//*[@type='checkbox']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:39.893" level="INFO">Clicking element 'xpath://*[@id='active-visits']//tbody//tr[2]//td[1]//*[@type='checkbox']'.</msg>
+<status status="PASS" starttime="20230528 20:51:39.893" endtime="20230528 20:51:40.984"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${merge_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:40.984" level="INFO">Clicking element 'id:mergeVisitsBtn'.</msg>
+<status status="PASS" starttime="20230528 20:51:40.984" endtime="20230528 20:51:43.535"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${gotopatientdetails_xpath}</arg>
+<arg>timeout=60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230528 20:51:43.535" endtime="20230528 20:51:44.582"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${gotopatientdetails_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:44.583" level="INFO">Clicking element 'xpath://ul[@id='breadcrumbs']//li[2]'.</msg>
+<status status="PASS" starttime="20230528 20:51:44.583" endtime="20230528 20:51:47.236"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${vists_xpath}</arg>
+<arg>timeout=60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230528 20:51:47.236" endtime="20230528 20:51:48.998"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${visit2}</var>
+<arg>${vists_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:50.066" level="INFO">${visit2} = 28.May.2023
+Vitals</msg>
+<status status="PASS" starttime="20230528 20:51:48.998" endtime="20230528 20:51:50.066"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${visit2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230528 20:51:50.066" endtime="20230528 20:51:50.066"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${visit2}</arg>
+<arg>28.May.2023</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20230528 20:51:50.066" level="FAIL">28.May.2023
+Vitals != 28.May.2023</msg>
+<status status="FAIL" starttime="20230528 20:51:50.066" endtime="20230528 20:51:50.066"/>
+</kw>
+<kw name="...Vitals">
+<status status="NOT RUN" starttime="20230528 20:51:50.082" endtime="20230528 20:51:50.083"/>
+</kw>
+<status status="FAIL" starttime="20230528 20:51:34.174" endtime="20230528 20:51:50.084"/>
+</kw>
+<status status="FAIL" starttime="20230528 20:51:34.167" endtime="20230528 20:51:50.086">28.May.2023
+Vitals != 28.May.2023</status>
+</test>
+<test id="s1-t10" name="Check future date" line="33">
+<kw name="Add past date" library="Keywords">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230528 20:51:50.099" endtime="20230528 20:51:50.100"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${pastdate_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:50.101" level="INFO">Clicking element 'xpath://*[@id='org.openmrs.module.coreapps.createRetrospectiveVisit']/div/div[2]'.</msg>
+<status status="PASS" starttime="20230528 20:51:50.100" endtime="20230528 20:51:51.181"/>
+</kw>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<arg>${futuredate_xpath}</arg>
+<arg>class</arg>
+<arg>day disabled</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<msg timestamp="20230528 20:51:52.223" level="INFO">Element 'xpath://body[1]/div[2]/div[3]/table[1]/tbody[1]/tr[5]/td[3]' attribute 'class' contains value 'day disabled'.</msg>
+<status status="PASS" starttime="20230528 20:51:51.181" endtime="20230528 20:51:52.223"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Click Element</arg>
+<arg>${futuredate_xpath}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${futuredate_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:52.225" level="INFO">Clicking element 'xpath://body[1]/div[2]/div[3]/table[1]/tbody[1]/tr[5]/td[3]'.</msg>
+<status status="PASS" starttime="20230528 20:51:52.223" endtime="20230528 20:51:53.290"/>
+</kw>
+<msg timestamp="20230528 20:51:53.290" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230528 20:51:52.223" endtime="20230528 20:51:53.290"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'False'=='${status}'</arg>
+<arg>Fail</arg>
+<arg>"Element should not be clickable"</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230528 20:51:53.290" endtime="20230528 20:51:53.291"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>ESC</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230528 20:51:53.293" level="INFO">Sending key(s) ('ESC',) to page.</msg>
+<msg timestamp="20230528 20:51:53.293" level="INFO">Pressing special key ESCAPE to browser.</msg>
+<msg timestamp="20230528 20:51:53.293" level="INFO">Releasing special key ESCAPE.</msg>
+<status status="PASS" starttime="20230528 20:51:53.291" endtime="20230528 20:51:53.810"/>
+</kw>
+<status status="PASS" starttime="20230528 20:51:50.093" endtime="20230528 20:51:53.811"/>
+</kw>
+<status status="PASS" starttime="20230528 20:51:50.093" endtime="20230528 20:51:53.814"/>
+</test>
+<test id="s1-t11" name="Delete Patient" line="35">
+<kw name="Delete Patient" library="Keywords">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230528 20:51:53.815" endtime="20230528 20:51:53.821"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${patient_id}</var>
+<arg>${patientid_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:54.876" level="INFO">${patient_id} = 100K26</msg>
+<status status="PASS" starttime="20230528 20:51:53.821" endtime="20230528 20:51:54.876"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${patient_id}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230528 20:51:54.876" endtime="20230528 20:51:54.878"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${deletepatient_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:54.882" level="INFO">Clicking element 'xpath://div[contains(text(),'Delete Patient')]'.</msg>
+<status status="PASS" starttime="20230528 20:51:54.880" endtime="20230528 20:51:55.982"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${reason_xpath}</arg>
+<arg>Test</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:55.983" level="INFO">Typing text 'Test' into text field 'xpath://input[@id='delete-reason']'.</msg>
+<status status="PASS" starttime="20230528 20:51:55.982" endtime="20230528 20:51:57.590"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${confirm_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230528 20:51:57.591" level="INFO">Clicking element 'xpath://div[@id='delete-patient-creation-dialog']//button[@class='confirm right'][normalize-space()='Confirm']'.</msg>
+<status status="PASS" starttime="20230528 20:51:57.590" endtime="20230528 20:51:58.667"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${toast_xpath}</arg>
+<arg>Patient has been deleted successfully</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230528 20:51:59.715" level="INFO">Element 'xpath://*[contains(@class, 'toast')]' contains text 'Patient has been deleted successfully'.</msg>
+<status status="PASS" starttime="20230528 20:51:58.667" endtime="20230528 20:51:59.715"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${search_xpath}</arg>
+<arg>timeout=30 seconds</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230528 20:51:59.715" endtime="20230528 20:52:03.426"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${search_xpath}</arg>
+<arg>${patient_id}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230528 20:52:03.428" level="INFO">Typing text '100K26' into text field 'xpath://input[@id='patient-search']'.</msg>
+<status status="PASS" starttime="20230528 20:52:03.426" endtime="20230528 20:52:05.028"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${tablecontent_xpath}</arg>
+<arg>No matching records found</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230528 20:52:06.076" level="INFO">Element 'xpath://table[@id='patient-search-results-table']//tbody' contains text 'No matching records found'.</msg>
+<status status="PASS" starttime="20230528 20:52:05.028" endtime="20230528 20:52:06.076"/>
+</kw>
+<status status="PASS" starttime="20230528 20:51:53.815" endtime="20230528 20:52:06.076"/>
+</kw>
+<status status="PASS" starttime="20230528 20:51:53.815" endtime="20230528 20:52:06.076"/>
+</test>
+<status status="FAIL" starttime="20230528 20:49:23.247" endtime="20230528 20:52:06.081"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="9" fail="2" skip="0" id="s1" name="Testcases">Testcases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
