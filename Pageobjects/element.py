@@ -45,8 +45,9 @@ attchmentdropzone_id = "xpath:/html/body/div/div[3]/div[3]/div[1]/att-file-uploa
 caption_xpath = "xpath://*[@ng-model='typedText.fileCaption']"
 uploadfile_xpath = "xpath://*[@class='confirm ng-binding']"
 gotopatientdetails_xpath = "xpath://ul[@id='breadcrumbs']//li[2]"
-vists_xpath = "xpath:/html/body/div[1]/div[3]/div[9]/div[1]/div/div[2]/div[1]/div[2]/visitbyencountertype/ul/li"
 
+vists_date_xpath = "xpath://*[@ng-repeat='visit in $ctrl.visits track by $index']//a"
+visits_vitals_xpath = "xpath://*[@ng-repeat='visit in $ctrl.visits track by $index']//div"
 endvisit_xpath = "xpath://ul[@class='float-left d-none d-lg-block']//li[1]"
 yesbutton_xpath = "xpath://*[@id='end-visit-dialog']//div[2]//button[1]"
 

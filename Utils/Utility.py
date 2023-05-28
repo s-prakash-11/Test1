@@ -22,4 +22,3 @@ def bmi(height, weight):
     roundedBmi = round(bmi,1)
     return str(roundedBmi)
 
-

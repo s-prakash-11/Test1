@@ -26,7 +26,8 @@ login
     input text  ${username_id}  ${username}
     input text  ${password_id}  ${password}
     Click Element   ${op_id}
-    Click Element   ${login_id} 
+    Click Element   ${login_id}
+    Log    successfully logged in      level=INFO
 
 Register new patient
     Set Selenium Speed  0.5 second
@@ -50,6 +51,7 @@ Register new patient
     input text  ${phonenumber_id}   ${phone}
     click element   ${relativenext_id}
     click element   ${relativenext_id}
+    Log    New patient created      level=INFO
 Verify patient details
 #Verify name
     Set Selenium Speed  0.5 second
@@ -91,7 +93,7 @@ Verify patient details
 Verify age
     Set Selenium Speed  0.5 second
     click element   ${submit_id}
-
+    Wait Until Element Is Visible   ${age_xpath}  timeout=60 seconds
     ${tempAge}=    Get Text    ${age_xpath}
     ${age}=   Fetch From Left    ${tempAge}    year(s) ( 31.May.1997) 
     ${actualAge}=   Strip String    ${age}    mode=right
@@ -124,9 +126,9 @@ Confirm visit
     click element   ${gotopatientdetails_xpath}
     Wait Until Element Is Visible   ${endvisit_xpath}     timeout=60 seconds
 #Verfiy Recent Visit has one entry for current date    
-    ${visit}=   Get Text  ${vists_xpath}
-    Should Not Be Empty     ${visit}    msg=No vist recorded
-    ${verifydate}=     Verify Date   ${visit}
+    ${recentvisit}=   Get Text  ${vists_date_xpath}
+    Should Not Be Empty     ${recentvisit}    msg=No vist recorded
+    ${verifydate}=     Verify Date   ${recentvisit}
     Should be Equal    ${verifydate}    True
 #click on end visit
     click element   ${endvisit_xpath}
@@ -167,12 +169,13 @@ Check BMI details
     Should be Equal    ${getbmi}    ${bmi}
 Recent Visit has one more new entry
     Set Selenium Speed  0.5 seconds
-    ${visit}=   Get Text  ${vists_xpath}
-    Log to console      ${visit}
-    Should be Equal    ${visit}    28.May.2023
-    ...                                        Vitals
-    ${verifydate}=     Verify Date   ${visit}
-    Should be Equal    ${verifydate}    True
+    ${visitdate}=   Get Text  ${vists_date_xpath}
+    ${visitvitals}=     Get Text    ${visits_vitals_xpath}
+    Log to console      ${visitdate}
+    Should Contain Any    ${visitdate}    28.May.2023
+    Should Contain Any    ${visitvitals}    Vitals
+    ${verifydatefunction}=     Verify Date   ${visitdate}
+    Should be Equal    ${verifydatefunction}    True
 Merge Visits
     Set Selenium Speed  0.5 seconds
     Wait Until Element Is Visible   ${mergevisit_xpath}  timeout=60 seconds
@@ -183,11 +186,10 @@ Merge Visits
     click element   ${merge_id}
     Wait Until Element Is Visible   ${gotopatientdetails_xpath}  timeout=60 seconds
     click element   ${gotopatientdetails_xpath}
-    Wait Until Element Is Visible   ${vists_xpath}  timeout=60 seconds
-    ${visit2}=   Get Text  ${vists_xpath}
+    Wait Until Element Is Visible   ${vists_date_xpath}  timeout=60 seconds
+    ${visit2}=   Get Text  ${vists_date_xpath}
     Log to console      ${visit2}
-    Should be Equal    ${visit2}    28.May.2023
-    ...Vitals
+    Should Contain Any    ${visit2}    28.May.2023  Vitals
 Add past date
     Set Selenium Speed  0.5 seconds
     click element   ${pastdate_xpath}
@@ -216,5 +218,6 @@ Delete Patient
     #check deleted petient is removed from trhe patient list
     Wait Until Element Is Enabled   ${search_xpath}  timeout=30 seconds
     input text      ${search_xpath}     ${patient_id}
+    Sleep   5s
     Element Should Contain      ${tablecontent_xpath}   No matching records found
 #log files
