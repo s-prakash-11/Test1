@@ -217,3 +217,4 @@ Delete Patient
     Wait Until Element Is Enabled   ${search_xpath}  timeout=30 seconds
     input text      ${search_xpath}     ${patient_id}
     Element Should Contain      ${tablecontent_xpath}   No matching records found
+#log files
