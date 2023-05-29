@@ -172,7 +172,8 @@ Recent Visit has one more new entry
     ${visitdate}=   Get Text  ${vists_date_xpath}
     ${visitvitals}=     Get Text    ${visits_vitals_xpath}
     Log to console      ${visitdate}
-    Should Contain Any    ${visitdate}    28.May.2023
+    ${currentdate}=     Current Date
+    Should Contain Any    ${visitdate}    ${currentdate}
     Should Contain Any    ${visitvitals}    Vitals
     ${verifydatefunction}=     Verify Date   ${visitdate}
     Should be Equal    ${verifydatefunction}    True
@@ -189,7 +190,8 @@ Merge Visits
     Wait Until Element Is Visible   ${vists_date_xpath}  timeout=60 seconds
     ${visit2}=   Get Text  ${vists_date_xpath}
     Log to console      ${visit2}
-    Should Contain Any    ${visit2}    28.May.2023  Vitals
+    ${currentdate}=     Current Date
+    Should Contain Any    ${visit2}    ${currentdate}  Vitals
 Add past date
     Set Selenium Speed  0.5 seconds
     click element   ${pastdate_xpath}

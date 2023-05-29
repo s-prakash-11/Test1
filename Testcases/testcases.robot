@@ -15,8 +15,10 @@ Open browser
     Wait Until Page Contains Element    ${resisterpatient_id}   error=page not loaded
     Page Should Contain Element   ${resisterpatient_id}     message=Page doest not contain Resiter patient option   loglevel=TRACE
 Register a new patient 
+    [Documentation]  In this test case we are verifying the functionality of add a new patient
     Register new patient
 Verify patient datials
+    [Documentation]  In this test case, we are verifying that the data provided while creating a new patient matches the data displayed on the confirmation page or not.
     Verify patient details
 Verify patient age
     Verify age
