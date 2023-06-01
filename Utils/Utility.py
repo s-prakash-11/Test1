@@ -23,4 +23,4 @@ def bmi(height, weight):
     return str(roundedBmi)
 
 def current_date():
-    return str(date.today().strftime('%d.%B.%Y'))
+    return str(date.today().strftime('%d.%b.%Y'))
